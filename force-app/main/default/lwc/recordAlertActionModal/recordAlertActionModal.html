@@ -1,0 +1,24 @@
+<template>
+    <template lwc:if={showHeader}>
+        <lightning-modal-header label={header}></lightning-modal-header>
+    </template>
+
+    <lightning-modal-body>
+        <template lwc:if={flowModal}>
+            <div class="slds-is-relative">
+                <lightning-flow
+                    onstatuschange={handleStatusChange}
+                    flow-api-name={flowName}
+                    flow-input-variables={inputVariables}
+                    flow-finish-behavior={flowFinish}>
+                </lightning-flow>
+            </div>
+        </template>
+    </lightning-modal-body>
+
+    <template lwc:if={showFooter}>
+        <lightning-modal-footer>
+            <lightning-button label="Close" onclick={handleClose}></lightning-button>
+        </lightning-modal-footer>
+    </template>
+</template>

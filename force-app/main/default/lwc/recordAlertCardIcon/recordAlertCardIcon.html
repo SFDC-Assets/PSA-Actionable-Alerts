@@ -1,0 +1,24 @@
+<template>
+    <template lwc:if={iconUrl}>
+        <img class="custom-icon" src={iconUrl} alt={altText} />
+    </template>
+    <template lwc:elseif={salesforceIcon}>
+        <lightning-icon icon-name={salesforceIcon} size="small" variant={iconVariant}></lightning-icon>
+    </template>
+    <template lwc:else>
+        <lightning-icon icon-name="utility:alert" size="small" variant={iconVariant}></lightning-icon>
+    </template>
+    <!--
+    <template if:true={errorMessage}>
+        <div class="slds-box slds-theme_error">
+            <lightning-icon 
+                icon-name="utility:error" 
+                alternative-text="Error" 
+                variant="inverse" 
+                size="small">
+            </lightning-icon>
+            <p>{errorMessage}</p>
+        </div>
+    </template>
+-->
+</template>

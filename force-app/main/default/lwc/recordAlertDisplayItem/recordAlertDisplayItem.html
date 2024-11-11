@@ -1,0 +1,44 @@
+<template>
+    <!-- Mobile Layout -->
+    <div class="slds-grid slds-grid_vertical slds-hide_small">
+        <div class="slds-col">
+            <lightning-card>
+                <h3 slot="title" class="alert-title">
+                    <div class="slds-grid slds-grid_vertical">
+                        <span onclick={navigateToRecord} class={subjectClass}>{alert.Subject}</span>
+                    </div>
+                </h3>
+                <template if:true={alert.Severity}>
+                    <lightning-badge label={alert.Severity} icon-name="utility:warning" class={badgeClassMobile}></lightning-badge>
+                </template>
+                <template if:true={alert.Description}>
+                    <p class={descClassMobile}>{alert.Description}</p>
+                </template>
+                <c-record-alert-card-action class="slds-p-horizontal_medium" record-id={alert.Id} record-alert-category-id={alert.RecordAlertCategoryId} button-label={buttonLabel}></c-record-alert-card-action>
+            </lightning-card>
+        </div>
+    </div>
+    <!-- Desktop Layout -->
+    <div class="slds-grid slds-show_small">
+        <div class="slds-col slds-size_1-of-12 slds-align_absolute-center">
+            <c-record-alert-card-icon record-alert-category-id={alert.RecordAlertCategoryId} important={important}></c-record-alert-card-icon>
+        </div>
+        <div class="slds-col slds-size_11-of-12">
+            <lightning-card>
+                <c-record-alert-card-action record-id={alert.Id} record-alert-category-id={alert.RecordAlertCategoryId} button-label={buttonLabel} slot="actions"></c-record-alert-card-action>
+                <h3 slot="title" class="alert-title">
+                    <span onclick={navigateToRecord} class={subjectClass}>{alert.Subject}</span>
+                    <template if:true={alert.Severity}>
+                        <lightning-badge label={alert.Severity} icon-name="utility:warning" class={badgeClass}></lightning-badge>
+                    </template>
+                </h3>
+                <div class="slds-p-horizontal_small">
+                    <p class={descClass}>{alert.Description}</p>
+                </div>
+                <!-- <div slot="footer">
+                    <lightning-formatted-date-time value={alert.CreatedDate} year="numeric" month="short" day="2-digit"></lightning-formatted-date-time>
+                </div> -->
+            </lightning-card>
+        </div>
+    </div>
+</template>

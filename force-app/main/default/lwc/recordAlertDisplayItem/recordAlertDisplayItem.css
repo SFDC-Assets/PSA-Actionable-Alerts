@@ -1,0 +1,12 @@
+.alert-title{
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+.badge-important{
+    --slds-c-badge-icon-color-foreground: white;
+}
+
+c-record-alert-card-action:empty{
+    display: none;
+}

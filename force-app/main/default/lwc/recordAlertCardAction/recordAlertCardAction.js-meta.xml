@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>Record Alert Card Actions</masterLabel>
+    <description>Display the actions for a Record Alert based on the record alert category and the flows configured for it.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen,lightning__RecordPage,lightning__AppPage,lightning__HomePage">
+            <property name="recordAlertCategoryId" type="String" label="Record Alert Category ID" description="The ID of the record alert category to display"/>
+            <property name="buttonLabel" type="String" label="Button Label" default="Take Action" description="The label of the action button"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

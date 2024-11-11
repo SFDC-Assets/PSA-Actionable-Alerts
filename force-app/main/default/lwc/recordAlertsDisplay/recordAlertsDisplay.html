@@ -1,0 +1,82 @@
+<template>
+    <lightning-card title={cardTitle} icon-name="custom:custom53">
+        <template if:true={recordAlerts}>
+            <template for:each={displayedAlerts} for:item="alert">
+                <c-record-alert-display-item key={alert.Id} alert={alert} important-alert-severities={importantAlertSeverities} button-label={rowButtonLabel}></c-record-alert-display-item>
+            </template>
+        </template>
+        <template if:true={loading}>
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+        <template if:true={error}>
+            <div class="slds-box slds-theme_error">
+                <lightning-icon 
+                    icon-name="utility:error" 
+                    alternative-text="Error" 
+                    variant="inverse" 
+                    size="small">
+                </lightning-icon>
+                <p>{error}</p>
+            </div>
+        </template>
+        <div slot="actions" class="slds-p-bottom_medium">
+            <div class="slds-grid">
+                <div class="slds-col slds-p-top_large slds-p-right_x-small slds-show_small">
+                    <lightning-input 
+                        type="toggle" 
+                        label="Snoozed Alerts" 
+                        alternative-text="Snoozed Alerts"
+                        name="showSnoozed"
+                        checked={showSnoozed}
+                        onchange={handleToggle}
+                        message-toggle-active=""
+                        message-toggle-inactive=""
+                        disabled={disabledToggle}
+                        class="snooze-toggle"
+                    ></lightning-input>
+                </div>
+                <div class="slds-col slds-show_small">
+                    <lightning-combobox
+                        name="severity"
+                        label="Severity"
+                        alternative-text="Severity"
+                        value={selectedSeverity}
+                        placeholder="Select Severity"
+                        options={severityOptions}
+                        onchange={handleSeverityFilter}
+                        disabled={disabledFilter}
+                    ></lightning-combobox>
+                </div>
+                <template if:true={massActionFlow}>
+                    <div class="slds-col slds-p-top_large">
+                        <lightning-button 
+                            label={massActionlabel}
+                            title={massActionLabel}
+                            alternative-text={massActionLabel}
+                            onclick={openModal} 
+                            class="slds-m-left_x-small"
+                            disabled={disabledMassAction}
+                        ></lightning-button>
+                    </div>
+                </template>
+                <lightning-button-icon 
+                    class="slds-col slds-p-top_large slds-p-left_x-small"
+                    icon-name="utility:refresh" 
+                    variant="border-filled" 
+                    alternative-text="Refresh" 
+                    title="Refresh" 
+                    onclick={handleRefresh}
+                    disabled={loading}>
+                </lightning-button-icon>
+            </div>
+        </div>
+        <template lwc:if={isHiddenAlerts}>
+            <div slot="footer">
+                <a 
+                    href="javascript:void(0);" 
+                    onclick={handleAdditionalAlerts}
+                >{cardFooter}</a>
+            </div>
+        </template>
+    </lightning-card>
+</template>

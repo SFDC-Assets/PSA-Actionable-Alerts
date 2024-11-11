@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_System__c</fullName>
+    <externalId>false</externalId>
+    <label>Source System</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LMS</fullName>
+                <default>false</default>
+                <label>LMS</label>
+            </value>
+            <value>
+                <fullName>SIS</fullName>
+                <default>false</default>
+                <label>SIS</label>
+            </value>
+            <value>
+                <fullName>Housing</fullName>
+                <default>false</default>
+                <label>Housing</label>
+            </value>
+            <value>
+                <fullName>Dining</fullName>
+                <default>false</default>
+                <label>Dining</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Data Cloud</fullName>
+                <default>false</default>
+                <label>Data Cloud</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
