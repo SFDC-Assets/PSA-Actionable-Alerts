@@ -1,19 +1,39 @@
 ![Public Sector Accelerators logo](/docs/Logo_GPSAccelerators_v01.png)
 
 # Actionable Alerts
-**Use this configurable, Flow-based component to display and interact with Record Alerts on a Lightning page, providing an enhanced experience over the standard option.**
+**Interact with Record Alerts through an enhanced experience to better support your constituents.**
 
-Accelerator Listing: [https://gpsaccelerators.developer.salesforce.com](https://gpsaccelerators.developer.salesforce.com) (tbd once published)
+View: [Accelerator Site Listing](https://pubsec-accelerators.my.site.com/accelerators/accelerator/a0wDo0000024955IAA)
 
 ## Description
+Actionable Alerts provides an enhanced, action-oriented interface for better using Record Alerts in the flow of work.
 
-The actionable alerts component in Salesforce allows administrators to configure how alerts are queried and displayed on a page. By building a custom flow, admins can select and render alerts based on specific criteria, such as querying child or grandparent records. Alerts can be conditionally displayed to users viewing a record in Salesforce.
+Record Alerts is a powerful, out-of-the-box feature provided as a Salesforce Common Industry Component. It provides user awareness of special circumstances that need attention or action on a given record. Alerts can be created by users, through automation, and even by external systems, and are available for reporting and analytics. However, the standard way of viewing Record Alerts is informational only, leaving users without any way to quickly act on them.
 
-Admins can also configure actions for different alert categories, enabling end users to take customized row-level actions or mass actions on alerts. The component supports sorting, conditional display of snoozed alerts, and configuration of the number of alerts shown on a page. It also offers UI customization options to ensure the component renders according to specific use cases.
+This Accelerator provides a new interface for seeing these alerts - and taking immediate action to support related constituents. A configurable Lightning Web Component (LWC) improves how users see and manage their alerts, and buttons open relevant flows for working or resolving each individual alert.
 
-Additionally, admins can assign custom icons to alert categories or use icons from the Salesforce Lightning Design System (SLDS) to enhance the user experience. This ensures a best-in-class experience for users interacting with the alert display component in Salesforce.
+This Accelerator includes a sample flow that allows users to take a number of actions. The actions are configured as subflows that can be changed as needed. The set of actions can be configured to be specific to each Record Alert category, allowing admins to provide tailored paths for different alert types. Admins can extend the available actions by creating new subflows, such as a subflow to launch Slack Case Swarming.
 
-Included is a sample flow that allows users to take a number of actions. The actions are configured as subflows, and can be changed in and out as needed. The set of actions can be configured to be specific to each Record Alert category, allowing admins to provide tailored paths for different alert types. Admins can extend the available actions by creating new subflows, such as a subflow to launch Slack Case Swarming.
+**Key Features and Benefits for Users**
+- Manage Alerts on Records
+   - Update the status of an alert
+   - Change button labels
+   - Configure the number of alerts to show on a record page
+   - Show or hide snoozed alerts
+   - Filter by alert severity
+   - Open an alert and keep it open in context within tabs and sub-tabs on records (if used from a console app)
+- Manage Alerts with Mass Actions
+   - Leverage a pre-built flow for mass actions or build your own
+   - Use mass/bulk actions to manage the status of alerts
+
+**Key Features and Benefits for Administrators**
+- Configure the severity levels of alerts and which types of severities are displayed in red in the record page for the LWC
+- Configure row-level and mass actions to manage alerts
+- Leverage flows to display actions on records for your staff
+- Define alert categories and use/extend pre-configured categories
+- Manage pre-defined alert icons (custom and SLDS icons)
+
+Actionable Alerts empowers Education, Nonprofit, and Public Sector teams to efficiently manage alerts directly on records, and makes it easy for administrators to customize alerts to enhance productivity and ensure critical information and processes are easily accessible. With features like configurable severity levels, mass action capabilities, and customizable alert categories, this solution streamlines alert handling and adapts to organizational needs.
 
 ## Included Assets
 This Accelerator includes the following key assets:
