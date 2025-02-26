@@ -3,10 +3,13 @@
 LWC Name       : recordAlertDisplay
 Created Date    : 9/12/2024
 @description    : This component dynamically loads all record alerts.
-@version        : 1.0
+                 Button labels are set to default values and can be 
+                 controlled from the metadata level.
+@version        : 1.1
 @author         : Andrew Chalon
 Modification Log:
 - Ver 1.0 [9/12/2024] [Andrew Chalon] Initial Version
+- Ver 1.1 [2/21/2025] [Andrew Chalon] Added default button labels configurable via metadata
 *********************************************************
 */
 

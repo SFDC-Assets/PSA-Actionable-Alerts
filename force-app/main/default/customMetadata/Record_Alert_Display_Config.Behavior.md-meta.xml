@@ -7,6 +7,10 @@
         <value xsi:type="xsd:string">UX_Record_Alert_Manage_Alert</value>
     </values>
     <values>
+        <field>Flow_Action_Button_Label__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>Record_Alert_Category_Developer_Name__c</field>
         <value xsi:type="xsd:string">RecordAlert_Behavior</value>
     </values>

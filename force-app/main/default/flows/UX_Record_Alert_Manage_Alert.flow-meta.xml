@@ -18,6 +18,14 @@
         </value>
     </choices>
     <choices>
+        <name>closeFlow</name>
+        <choiceText>I&apos;m done with this alert</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>closeFlow</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>createProgramEnrollment</name>
         <choiceText>Enroll {!contactName} in a Program</choiceText>
         <dataType>String</dataType>
@@ -116,7 +124,7 @@
     <decisions>
         <name>If_Action_Type</name>
         <label>If Action Type</label>
-        <locationX>974</locationX>
+        <locationX>1106</locationX>
         <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Action_Error_Screen</targetReference>
@@ -227,11 +235,23 @@
             </connector>
             <label>Add to Campaign</label>
         </rules>
+        <rules>
+            <name>Close_Flow</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Select_Action</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>closeFlow</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Close Flow</label>
+        </rules>
     </decisions>
     <decisions>
         <name>If_Alert</name>
         <label>If Alert</label>
-        <locationX>1568</locationX>
+        <locationX>1766</locationX>
         <locationY>242</locationY>
         <defaultConnector>
             <targetReference>Error_Screen</targetReference>
@@ -285,7 +305,7 @@
     <recordLookups>
         <name>Get_Alert</name>
         <label>Get Alert</label>
-        <locationX>1568</locationX>
+        <locationX>1766</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -317,7 +337,7 @@
     <screens>
         <name>Action_Error_Screen</name>
         <label>Action Error Screen</label>
-        <locationX>1898</locationX>
+        <locationX>2162</locationX>
         <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -333,7 +353,7 @@
     <screens>
         <name>Action_Screen</name>
         <label>Action Screen</label>
-        <locationX>974</locationX>
+        <locationX>1106</locationX>
         <locationY>458</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -366,6 +386,7 @@
                     <choiceReferences>createProgramEnrollment</choiceReferences>
                     <choiceReferences>logTask</choiceReferences>
                     <choiceReferences>addToCampaign</choiceReferences>
+                    <choiceReferences>closeFlow</choiceReferences>
                     <dataType>String</dataType>
                     <fieldText>Select Action</fieldText>
                     <fieldType>RadioButtons</fieldType>
@@ -414,7 +435,7 @@
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>2162</locationX>
+        <locationX>2426</locationX>
         <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -508,13 +529,13 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>1442</locationX>
+        <locationX>1640</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Alert</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>Apply_Action_Plan2</name>
         <label>Apply Action Plan</label>
@@ -589,7 +610,7 @@
         <description>Gets key fields from related records by ParentId and WhatId</description>
         <name>Get_Related_Record_Details</name>
         <label>Get Related Record Details</label>
-        <locationX>974</locationX>
+        <locationX>1106</locationX>
         <locationY>350</locationY>
         <connector>
             <targetReference>Action_Screen</targetReference>

@@ -45,7 +45,7 @@
         <connector>
             <targetReference>Set_Record_Alerts</targetReference>
         </connector>
-        <filterLogic>or</filterLogic>
+        <filterLogic>(1 OR 2) AND 3</filterLogic>
         <filters>
             <field>ParentId</field>
             <operator>EqualTo</operator>
@@ -58,6 +58,13 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>

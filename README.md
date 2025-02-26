@@ -65,7 +65,7 @@ For more information on license requirements, please refer to the [Industry Clou
 
 ## Installation
 
-Unmanaged package installation link: [https://test.salesforce.com/packaging/installPackage.apexp?p0=04tao000000z7W1](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tao000000z7W1)
+Unmanaged package installation link: [https://test.salesforce.com/packaging/installPackage.apexp?p0=04tao00000108bJ](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tao00000108bJ)
 
 1. **Log in to Your Salesforce Environment**:
    - Use the installation link provided above to log in to your Salesforce sandbox environment.
@@ -94,6 +94,7 @@ Unmanaged package installation link: [https://test.salesforce.com/packaging/inst
       - Button Label for Alert Level Action (optional): Set the button label for alert-level actions. The default value for this is "Manage Alert."
    - Save the Lightning Record Page:  
       - Once all configurations are set, save the Lightning record page. Your actionable alerts component should now be properly configured and displayed on the Lightning record page.
+
 
 ### Optional Configuration
 
@@ -241,6 +242,13 @@ To implement these integrations, you would need to create custom prompt template
 <!--\[Optional. Summary list of additional links and references that you think are useful to. These links should be restricted to official Salesforce web resources and should not include third party references. Use an unordered list.\]-->
 
 ## **Revision History**
+
+2.0 Release (26 Feb 2025) - Enhanced functionality and bug fixes:
+* Enhanced control on row-level alert actions with configurable button names in metadata
+* Resolved task subflow bug
+* Removed Education Cloud dependency for broader compatibility
+* Enhanced UX improvements to manage alert flow
+* Fixed email picklist fields bug
 
 1.0 Initial release (29 Oct 2024) - Provides a lightning web component, sample metadata, and sample automation to enhance the Industries Record Alerts to enable end users to take action on alerts.
 

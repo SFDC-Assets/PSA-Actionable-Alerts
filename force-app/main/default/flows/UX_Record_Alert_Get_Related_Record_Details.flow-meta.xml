@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Get_parentId_SObject_API_Name</name>
         <label>Get parentId SObject API Name</label>
-        <locationX>710</locationX>
+        <locationX>578</locationX>
         <locationY>134</locationY>
         <actionName>GetObjectSObjectAPIName</actionName>
         <actionType>apex</actionType>
@@ -19,12 +19,11 @@
         </inputParameters>
         <nameSegment>GetObjectSObjectAPIName</nameSegment>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Get_whatId_SObject_API_Name</name>
         <label>Get whatId SObject API Name</label>
-        <locationX>710</locationX>
+        <locationX>578</locationX>
         <locationY>242</locationY>
         <actionName>GetObjectSObjectAPIName</actionName>
         <actionType>apex</actionType>
@@ -40,13 +39,12 @@
         </inputParameters>
         <nameSegment>GetObjectSObjectAPIName</nameSegment>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
     <assignments>
         <name>Assign_App_Fields</name>
         <label>Assign App Fields</label>
-        <locationX>1106</locationX>
+        <locationX>842</locationX>
         <locationY>974</locationY>
         <assignmentItems>
             <assignToReference>relatedName</assignToReference>
@@ -66,7 +64,7 @@
     <assignments>
         <name>Assign_Care_Plan_Fields</name>
         <label>Assign Care Plan Fields</label>
-        <locationX>578</locationX>
+        <locationX>314</locationX>
         <locationY>974</locationY>
         <assignmentItems>
             <assignToReference>relatedName</assignToReference>
@@ -120,7 +118,7 @@
     <assignments>
         <name>Assign_Contact_Account_Id_Account</name>
         <label>Assign Contact &amp; Account Id - Account</label>
-        <locationX>446</locationX>
+        <locationX>314</locationX>
         <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>contactId</assignToReference>
@@ -157,7 +155,7 @@
     <assignments>
         <name>Assign_Contact_Account_Id_Case</name>
         <label>Assign Contact &amp; Account Id - Case</label>
-        <locationX>710</locationX>
+        <locationX>578</locationX>
         <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>contactId</assignToReference>
@@ -192,29 +190,9 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_COP_Name</name>
-        <label>Assign COP Name</label>
-        <locationX>314</locationX>
-        <locationY>1082</locationY>
-        <assignmentItems>
-            <assignToReference>relatedName</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>calculateCOPName</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>sObjectNameWhat</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Course Offering Participant</stringValue>
-            </value>
-        </assignmentItems>
-    </assignments>
-    <assignments>
         <name>Assign_Opportunity_Fields</name>
         <label>Assign Opportunity Fields</label>
-        <locationX>842</locationX>
+        <locationX>578</locationX>
         <locationY>974</locationY>
         <assignmentItems>
             <assignToReference>ownerId</assignToReference>
@@ -248,7 +226,7 @@
     <decisions>
         <name>Get_Parent_from_Alert</name>
         <label>Get Parent from Alert</label>
-        <locationX>710</locationX>
+        <locationX>578</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Get_Related_Record</targetReference>
@@ -288,7 +266,7 @@
     <decisions>
         <name>Get_Related_Record</name>
         <label>Get Related Record</label>
-        <locationX>710</locationX>
+        <locationX>578</locationX>
         <locationY>758</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -305,21 +283,6 @@
                 <targetReference>Get_Case_What</targetReference>
             </connector>
             <label>Case</label>
-        </rules>
-        <rules>
-            <name>Course_Offering_Participant</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_whatId_SObject_API_Name.sObjectApiName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>CourseOfferingParticipant</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Course_Offering_Participant</targetReference>
-            </connector>
-            <label>Course Offering Participant</label>
         </rules>
         <rules>
             <name>Care_Plan</name>
@@ -370,11 +333,6 @@
     <description>Gets details from the records related to the triggering RecordAlert via ParentId and WhatId.</description>
     <environments>Default</environments>
     <formulas>
-        <name>calculateCOPName</name>
-        <dataType>String</dataType>
-        <expression>{!Get_Course_Offering_Participant.CourseOffering.Name}&amp;&quot; - &quot;&amp;{!Get_Course_Offering_Participant.CourseOffering.SectionNumber}</expression>
-    </formulas>
-    <formulas>
         <name>caseContactName</name>
         <dataType>String</dataType>
         <expression>{!Get_Case.Contact.FirstName}&amp;&quot; &quot;&amp;{!Get_Case.Contact.LastName}</expression>
@@ -408,7 +366,7 @@
     <recordLookups>
         <name>Get_Account</name>
         <label>Get Account</label>
-        <locationX>446</locationX>
+        <locationX>314</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -429,7 +387,7 @@
     <recordLookups>
         <name>Get_Application</name>
         <label>Get Application</label>
-        <locationX>1106</locationX>
+        <locationX>842</locationX>
         <locationY>866</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -450,7 +408,7 @@
     <recordLookups>
         <name>Get_Care_Plan</name>
         <label>Get Care Plan</label>
-        <locationX>578</locationX>
+        <locationX>314</locationX>
         <locationY>866</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -471,7 +429,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>710</locationX>
+        <locationX>578</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -511,57 +469,9 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_Course_Offering_Participant</name>
-        <label>Get Course Offering Participant</label>
-        <locationX>314</locationX>
-        <locationY>866</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Faculty</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>whatId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>CourseOfferingParticipant</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Faculty</name>
-        <label>Get Faculty</label>
-        <locationX>314</locationX>
-        <locationY>974</locationY>
-        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_COP_Name</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Course_Offering_Participant.CourseOffering.PrimaryFacultyId</elementReference>
-            </value>
-        </filters>
-        <object>Contact</object>
-        <outputAssignments>
-            <assignToReference>facultyId</assignToReference>
-            <field>Id</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>facultyName</assignToReference>
-            <field>Name</field>
-        </outputAssignments>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Opportunity</name>
         <label>Get Opportunity</label>
-        <locationX>842</locationX>
+        <locationX>578</locationX>
         <locationY>866</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -580,7 +490,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>584</locationX>
+        <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_parentId_SObject_API_Name</targetReference>

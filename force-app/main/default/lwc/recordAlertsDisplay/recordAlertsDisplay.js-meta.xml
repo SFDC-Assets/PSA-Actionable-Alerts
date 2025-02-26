@@ -15,7 +15,13 @@
                 <supportedFormFactor type="Large" />
                 <supportedFormFactor type="Small" />
             </supportedFormFactors>
-            <property name="cardHeaderTitle" type="String" default="Record Alerts" label="Header Label" description="Enter a label to for the header on top of the card."/>
+            <property 
+                name="cardHeaderTitle" 
+                type="String" 
+                default="Record Alerts" 
+                label="Header Label" 
+                description="Enter a label to for the header on top of the card."
+            />
             <property
                 name="flowDeveloperName"
                 type="String"
@@ -25,18 +31,43 @@
                 required="true"
             />
             <!-- <property name="displayParentAlerts" type="Boolean" label="Display Parent Alerts" description="Display record alerts where the Parent Id equals the Record Id."/> -->
-            <property name="maximumAlertDisplay" type="Integer" default="5" label="Enter the maximum Alerts to Display"/>
-            <!-- <property name="excludedAlertCategories" type="String" label="Excluded Record Alert Categories" description="Enter a comma seperated list of the developer names of Record Alert Categories you would not like to load in this component."/> -->
-            <property name="importantAlertSeverities" type="String" default="High" label="Important Alert Severities" description="Enter a comma seperated list of the developer names of Severities you would like to render as important (red) Alerts."/>
             <property 
-                    name="massActionFlow" 
-                    type="String"
-                    datasource="apex://RecordAlertMassActionFlowPickList"
-                    label="Mass Action Flow"
-                    description="The Developer Name of the  mass action screen flow to take action on the displayed alerts in bulk. The flow must have an input varibale of type string collection with the name: recordIds."
+                name="maximumAlertDisplay" 
+                type="Integer" 
+                default="5" 
+                label="Enter the maximum Alerts to Display"
             />
-            <property name="massActionlabel" type="String" default="Manage Alerts" label="Button Label for Mass Action" description="Enter a label to for the button on top of the card."/>
-            <property name="rowButtonLabel" type="String" default="Manage Alert" label="Button Label for Alert Level Action" description="Enter a label for the buttons associated with each alert that has an action configured."/>
+            <!-- <property name="excludedAlertCategories" type="String" label="Excluded Record Alert Categories" description="Enter a comma seperated list of the developer names of Record Alert Categories you would not like to load in this component."/> -->
+            <property 
+                name="importantAlertSeverities" 
+                type="String" 
+                default="High" 
+                label="Important Alert Severities" 
+                description="Enter a comma seperated list of the developer names of Severities you would like to render as important (red) Alerts."
+            />
+            <property 
+                name="massActionFlow" 
+                type="String"
+                datasource="apex://RecordAlertMassActionFlowPickList"
+                label="Mass Action Flow"
+                description="The Developer Name of the  mass action screen flow to take action on the displayed alerts in bulk. The flow must have an input varibale of type string collection with the name: recordIds."
+            />
+            <property 
+                name="massActionlabel" 
+                type="String" 
+                default="Manage Alerts" 
+                label="Button Label for Mass Action" 
+                description="Enter a label to for the button on top of the card."
+                required="true"
+            />
+            <property 
+                name="rowButtonLabel" 
+                type="String" 
+                default="Manage Alert" 
+                label="Default Button Label for Alert Level Action" 
+                description="Enter a label for the buttons associated with each alert that has an action configured. This will be the default button label if no specific label is set in Custom Metadata."
+                required="true"
+            />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

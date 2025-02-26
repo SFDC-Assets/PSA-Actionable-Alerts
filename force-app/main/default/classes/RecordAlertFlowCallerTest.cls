@@ -19,6 +19,7 @@ public with sharing class RecordAlertFlowCallerTest {
             WhatId = testAccount.Id,
             EffectiveDate = Date.today(),
             ValidUntilDate = Date.today().addDays(30),
+            IsActive = TRUE,
             Subject = 'Test Alert'
         );
         insert testRecordAlert;
