@@ -113,6 +113,7 @@ Unmanaged package installation link: [https://test.salesforce.com/packaging/inst
          - Record Alert Category Developer Name: Enter the developer name for the Record Alert Category. This can be found by navigating to Setup, searching for "Record Alert Categories"  
          - Record Alert Icon: You can either enter the [SLDS icon](https://www.lightningdesignsystem.com/icons/) name (i.e. utility:alert) or the developer name of a custom Static Resource you have uploaded. See [Custom Record Alert Icon](#custom-record-alert-icon-optional).  
          - Flow Action API Name: Enter the API name of the screen flow that will be launched from alerts of this Record Alert Category. See [Custom Record Alert Action](#custom-record-alert-action-optional).
+         - Button Label for Alert Level Action (optional): Set the button label for alert-level actions. The default value for this is "Manage Alert."
       - Save the Custom Metadata Record:  
          - Once all fields are populated, save the new custom metadata record.
 
